@@ -1,0 +1,27 @@
+.widget__header{
+    align-self: flex-start;
+    position: relative;
+    font-size: 1.1rem;
+    height: 65px;
+    margin: 30px 0px 15px 15px; 
+}
+
+.widget__city{
+    position: absolute;
+    padding: 16px 0 0 0;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    font-weight: 500;
+
+    z-index: 1;
+    background-color: transparent;
+}
+
+.widget__label--city{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color:lightgray;
+}
+

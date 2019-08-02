@@ -1,0 +1,34 @@
+.widget__today{
+    align-self: flex-start;
+    width: 100%;
+    margin: 0 0 15px 15px;
+}
+.today__p--margin{
+    margin-left: 15px;
+}
+.today__left{
+    justify-self: start;
+    align-self: start;
+    align-items: flex-start;
+}
+.today__p{
+    margin-bottom: 5px;
+    text-align: left;
+    align-self: flex-start;
+}
+.today__span--degree{
+    font-size: 2.7rem;
+}
+.today__p--degree{
+    padding-top: 5px;
+}
+.today__right{
+    align-items: center;
+    flex-grow: 1;    
+}
+
+
+
+.today__span{
+    font-weight: 600;
+}

@@ -1,0 +1,46 @@
+/* Reset */
+*{
+    margin:0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+/* start */
+:root{
+    font-size: 16px;
+
+}
+body{
+    font-family: "Roboto", sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+/* font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif */
+}
+
+/* flex Classes */
+
+.flexRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* widget container */
+
+.widget{
+    width: 100%;
+    min-width: 320px;
+    max-width: 900px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+}
+.preloader{
+    width: 100%;
+}
