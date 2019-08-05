@@ -1,6 +1,17 @@
-.widget__day{
-    width: 100%;
-    justify-content: space-around;
-    /* align-items: space-around; */
-    border-top: 2px solid rgba(241,241,241,1);
+.widget__day {
+  width: 100%;
+  justify-content: space-around;
+  /* align-items: space-around; */
+  border-top: 2px solid rgba(215, 215, 215, 1);
+  padding: 5px 0;
+}
+.day__p {
+  color: rgba(142, 142, 142, 1);
+  color: rgba(132, 132, 132, 1);
+  color: rgba(107, 107, 107, 1);
+  color: rgba(132, 132, 132, 1);
+}
+.day__p--strong {
+  font-weight: 500;
+  color: rgba(74, 74, 74, 1);
 }
