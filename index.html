@@ -16,31 +16,29 @@
 <body>
 
     <div class="widget flexCol">
+
         <header class="widget__header">
             <label for="widget__label--city">Choose a city:</label>
             <select name="" id="widget__city" class="widget__city">
-                <option value="Katowice">Katowice</option>
-                <option value="London">London</option>
-                <option value="Sosnowiec">Sosnowiec</option>
+                <option value="0">City name</option>
             </select>
-
         </header>
-        <div class="preloader flexCol">
+
+        <div class="flexCol preloader">
 
             <p class="today__p today__p--margin today__p--day">Tuesday, April 15th</p>
             <p class="today__p today__p--margin today__p--type">Overcast</p>
 
             <div class="widget__today flexRow">
                 <div class="today__left flexCol">
-
                     <div class="flexRow">
-                        <img class="today__img--sunny" src="public/assets/sunny.png" alt="sunny">
-                        <img class="today__img--partlyCloudy displayNone" src="public/assets/partly_cloudy.png"
+                        <img class="today__img" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                        <img class="today__img displayNone" data-type="pc" src="public/assets/partly_cloudy.png"
                             alt="partly cloudy">
-                        <img class="today__img--cloudy displayNone" src="public/assets/cloudy.png" alt="cloudy">
-                        <img class="today__img--rainLight displayNone" src="public/assets/rain_light.png"
+                        <img class="today__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                        <img class="today__img displayNone" data-type="rl" src="public/assets/rain_light.png"
                             alt="light rain">
-                        <img class="today__img--rainStrong displayNone" src="public/assets/rain_strong.png"
+                        <img class="today__img displayNone" data-type="r" src="public/assets/rain_strong.png"
                             alt="strong rain">
                         <span class="today__span--degree">58</span>
                         <p class="today__p today__p--degree">‎ °F</p>
@@ -48,71 +46,123 @@
                 </div>
                 <div class="today__right flexCol">
                     <div class="flexCol">
-                        <p class="today__p">Precipitation: <span class="today__span today__precip">100%</span></p>
-                        <p class="today__p">Humidity: <span class="today__span today__humid">97%</span></p>
-                        <p class="today__p">Wind: <span class="today__span today__wind">4 mph SW</span></p>
-                        <p class="today__p">Pollen Count: <span class="today__span today__pollen">36</span></p>
+                        <p class="today__p ">Precipitation: <span class="today__span today__span--precip">100%</span>
+                        </p>
+                        <p class="today__p ">Humidity: <span class="today__span today__span--humid">97%</span></p>
+                        <p class="today__p ">Wind: <span class="today__span today__span--wind">4 mph SW</span></p>
+                        <p class="today__p ">Pollen Count: <span class="today__span today__span--pollen">36</span></p>
                     </div>
                 </div>
             </div>
 
             <div class="widget__week flexCol">
+                <!-- day 1 -->
                 <div class="widget__day flexRow">
-                    <p class="day__h">Today</p>
-                    <img class="today__img--sunny displayNone" src="public/assets/sunny.png" alt="sunny">
-                    <img class="today__img--partlyCloudy " src="public/assets/partly_cloudy.png" alt="partly cloudy">
-                    <img class="today__img--cloudy displayNone" src="public/assets/cloudy.png" alt="cloudy">
-                    <img class="today__img--rainLight displayNone" src="public/assets/rain_light.png" alt="light rain">
-                    <img class="today__img--rainStrong displayNone" src="public/assets/rain_strong.png"
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
                         alt="strong rain">
 
-                    <p class="day__p day__p--strong">68°</p>
-                    <p class="day__p">36°</p>
-                    <p class="day__p">Pollen <span class="day__pollen">36</span></p>
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
                 </div>
-
+                <!-- day 2 -->
                 <div class="widget__day flexRow">
-                    <p class="day__h">Today</p>
-                    <img class="today__img--sunny displayNone" src="public/assets/sunny.png" alt="sunny">
-                    <img class="today__img--partlyCloudy " src="public/assets/partly_cloudy.png" alt="partly cloudy">
-                    <img class="today__img--cloudy displayNone" src="public/assets/cloudy.png" alt="cloudy">
-                    <img class="today__img--rainLight displayNone" src="public/assets/rain_light.png" alt="light rain">
-                    <img class="today__img--rainStrong displayNone" src="public/assets/rain_strong.png"
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
                         alt="strong rain">
 
-                    <p class="day__p day__p--strong">68°</p>
-                    <p class="day__p">36°</p>
-                    <p class="day__p">Pollen <span class="day__pollen">36</span></p>
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
                 </div>
-
+                <!-- day 3 -->
                 <div class="widget__day flexRow">
-                    <p class="day__h">Today</p>
-                    <img class="today__img--sunny displayNone" src="public/assets/sunny.png" alt="sunny">
-                    <img class="today__img--partlyCloudy " src="public/assets/partly_cloudy.png" alt="partly cloudy">
-                    <img class="today__img--cloudy displayNone" src="public/assets/cloudy.png" alt="cloudy">
-                    <img class="today__img--rainLight displayNone" src="public/assets/rain_light.png" alt="light rain">
-                    <img class="today__img--rainStrong displayNone" src="public/assets/rain_strong.png"
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
                         alt="strong rain">
 
-                    <p class="day__p day__p--strong">68°</p>
-                    <p class="day__p">36°</p>
-                    <p class="day__p">Pollen <span class="day__pollen">36</span></p>
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
                 </div>
-
+                <!-- day 4 -->
                 <div class="widget__day flexRow">
-                    <p class="day__h">Today</p>
-                    <img class="today__img--sunny displayNone" src="public/assets/sunny.png" alt="sunny">
-                    <img class="today__img--partlyCloudy " src="public/assets/partly_cloudy.png" alt="partly cloudy">
-                    <img class="today__img--cloudy displayNone" src="public/assets/cloudy.png" alt="cloudy">
-                    <img class="today__img--rainLight displayNone" src="public/assets/rain_light.png" alt="light rain">
-                    <img class="today__img--rainStrong displayNone" src="public/assets/rain_strong.png"
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
                         alt="strong rain">
 
-                    <p class="day__p day__p--strong">68°</p>
-                    <p class="day__p">36°</p>
-                    <p class="day__p">Pollen <span class="day__pollen">36</span></p>
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
+                </div>
+                <!-- day 5 -->
+                <div class="widget__day flexRow">
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
+                        alt="strong rain">
+
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
+                </div>
+                <!-- day 6 -->
+                <div class="widget__day flexRow">
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
+                        alt="strong rain">
+
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
+                </div>
+                <!-- day 7 -->
+                <div class="widget__day flexRow">
+                    <p class="day__p day__p--day">Today</p>
+                    <img class="day__img displayNone" data-type="s" src="public/assets/sunny.png" alt="sunny">
+                    <img class="day__img " data-type="pc" src="public/assets/partly_cloudy.png" alt="partly cloudy">
+                    <img class="day__img displayNone" data-type="c" src="public/assets/cloudy.png" alt="cloudy">
+                    <img class="day__img displayNone" data-type="rl" src="public/assets/rain_light.png"
+                        alt="light rain">
+                    <img class="day__img displayNone" data-type="r" src="public/assets/rain_strong.png"
+                        alt="strong rain">
+
+                    <p class="day__p day__p--degree day__p--strong">68°</p>
+                    <p class="day__p day__p--degreeN">36°</p>
+                    <p class="day__p">Pollen <span class="day__p day__p--pollen">36</span></p>
                 </div>
             </div>
+
         </div>
 
     </div>
