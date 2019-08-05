@@ -13,7 +13,7 @@ const widget = {
     },
     days: [],
     cityId: 0,
-    dates: [],
+    date: "",
     prevDate: "",
     /* 
         INIT()
@@ -29,10 +29,11 @@ const widget = {
     */
     getDays: () => {
         let i = 0;
-        while (i < 7) {
+        while (i < 5) {
             i++;
             widget.days.push(
                 {
+                    self: document.querySelector(`.widget__day:nth-child(${i})`),
                     day: document.querySelector(`.widget__day:nth-child(${i}) .day__p--day`),
                     imgs: document.querySelectorAll(`.widget__day:nth-child(${i}) .day__img`),
                     degree: document.querySelector(`.widget__day:nth-child(${i}) .day__p--degree`),
@@ -78,12 +79,8 @@ const widget = {
             widget.cityId = await e.target.value;
             if (widget.cityId != 0) {
                 await widget.getDate();
-                widget.dates.forEach(async date => {
-                    console.log("next")
-                    const data = await widget.fetchData(date);
-                    console.log(data, date);
-                    await widget.updateData(data);
-                });
+                const data = await widget.fetchData();
+                await widget.updateData(data);
             }
         });
     },
@@ -91,38 +88,52 @@ const widget = {
       GET DATE() 
     */
     getDate: () => {
-        let i = 0;
-        while (i < 7) {
-            i++;
-            let today = new Date(), dd, mm, yyyy;
-            if (widget.dates[0]) {
-                today = new Date(widget.prevDate);
-                today.setDate(today.getDate() + 1);
-            }
-            dd = String(today.getDate()).padStart(2, '0');
-            mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            yyyy = today.getFullYear();
-            widget.dates.push(mm + '-' + dd + '-' + yyyy);
-            widget.prevDate = today;
-        }
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const yyyy = today.getFullYear();
+        widget.date = mm + '-' + dd + '-' + yyyy;
+
     },
     /* 
         UPDATE DATA()
     */
     updateData: data => {
-        widget.days.forEach(day => {
-            day.imgs.forEach(img => {
-                img.classList.add("displayNone");
-            });
+        //today
+        widget.today.imgs.forEach((img, i) => {
+            img.classList.add("displayNone");
+            let type = img.getAttribute("data-type");
+            if (type == data[i].type) {
+                img.classList.remove("displayNone");
+            }
         });
-        widget.days[2].imgs[3].classList.remove("displayNone");
+
+        // days
+        widget.days.forEach((day, i) => {
+            day.self.classList.remove("displayNone");
+
+            if (data[i]) {
+                day.imgs.forEach(img => {
+                    img.classList.add("displayNone");
+                    let type = img.getAttribute("data-type");
+                    if (type == data[i].type) {
+                        img.classList.remove("displayNone");
+                    }
+                });
+                day.day.innerText = data[i].name;
+            } else {
+                day.self.classList.add("displayNone");
+            }
+
+        });
+        // widget.days[2].imgs[3].classList.remove("displayNone");
 
     },
     /* 
         FETCH DATA()
     */
-    fetchData: async date => {
-        const url = `http://dev-weather-api.azurewebsites.net/api/city/${widget.cityId}/weather?date=${date}`;
+    fetchData: async () => {
+        const url = `http://dev-weather-api.azurewebsites.net/api/city/${widget.cityId}/weather?date=${widget.date}`;
         const res = await fetch(url);
         let data;
         if (res.ok) {
@@ -147,8 +158,28 @@ const widget = {
         // data.forEach(location => {
         //     console.log(location)
         // })
-        let humid, pollen, precip, degree;
-        return data;
+
+        const dataSorted = [];
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        console.log(data);
+
+        // delete data[0];
+        data.forEach(day => {
+            const d = new Date(day.date.slice("T"));
+            const name = days[d.getDay()];
+            const humid = day.humidity;
+            const pollen = day.pollenCount;
+            const precip = day.precipitation;
+            const degree = day.temperature;
+            const type = day.type;
+            const wind = String(day.windInfo.speed + " mph " + day.windInfo.direction);
+
+            dataSorted.push({
+                name, humid, pollen, precip, degree, type, wind
+
+            });
+        })
+        return dataSorted;
     },
 }
 
