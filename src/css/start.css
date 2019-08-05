@@ -35,12 +35,55 @@ body{
 /* widget container */
 
 .widget{
-    width: 100%;
+    position: relative;
     min-width: 320px;
     max-width: 900px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
 }
 .preloader{
+    width:100%;
+    overflow: hidden;
+
+}
+.preload{
+    position: relative;
+    transform-origin: center;
+    animation: fadeIn forwards .2s;
+}
+@keyframes fadeIn{
+    0%{
+       opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.preload::before{
+    content: "";
+    position: absolute;
+    background-color: #fff;
     width: 100%;
+    height: 100%;
+}
+.preload::after{
+    content: "";
+    position: absolute;
+    left:calc(50% - 25px);
+    top:calc(45% - 25px);
+    width: 50px;
+    height: 50px;
+    background-image: url("../assets/load.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: rotate infinite .8s;    
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg) ;
+        
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
