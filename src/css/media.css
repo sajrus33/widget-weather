@@ -2,8 +2,24 @@
     display: none;
 }
 @media only screen and (min-width: 760px) {
-   
-   
+   .widget__week{
+       flex-direction: row;
+       margin-bottom: 10px;
+   }
+    .widget__day{
+        flex-direction: column;
+        border: none;
+    }
+    .day__wrapper--degree{
+        flex-wrap: nowrap;
+        width: 50px;
+        align-items: center;
+        justify-content: space-around;
+      }
+    .day__p--day{
+        text-align: center;
+        margin-left: 0;
+    }
 }
 
 @media only screen and (max-width: 480px) {

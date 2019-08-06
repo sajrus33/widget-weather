@@ -37,7 +37,8 @@ const widget = {
     */
     getDays: () => {
         let i = 0;
-        while (i < 5) {
+        const daysAmount = document.querySelectorAll(".widget__day").length;
+        while (i < daysAmount) {
             i++;
             widget.days.push(
                 {
@@ -153,8 +154,8 @@ const widget = {
                     }
                 });
                 day.day.innerText = data[i].name;
-                day.degree.innerText = data[i].degree;
-                day.degreeN.innerText = data[i].degree - 7;
+                day.degree.innerText = String(data[i].degree) + "°";
+                day.degreeN.innerText = String(data[i].degree - 7) + "°";
                 day.pollen.innerText = data[i].pollen;
 
 

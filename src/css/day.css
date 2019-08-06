@@ -5,6 +5,7 @@
   border-top: 2px solid rgba(215, 215, 215, 1);
   padding: 5px 0;
 }
+
 .day__p {
   color: rgba(142, 142, 142, 1);
   color: rgba(132, 132, 132, 1);
@@ -15,20 +16,30 @@
   font-weight: 500;
   color: rgba(74, 74, 74, 1);
 }
+.day__p--pollen{
+    font-weight: 500;
+  color: rgba(107, 107, 107, 1);
 
+}
 .widget__day > * {
-    flex-basis: calc(100% / 5);
-    text-align: center;
+  flex-grow: 1;
+
+  flex-basis: calc(100% / 5);
+  text-align: center;
 }
 .day__p--day{
     text-align: left;
     margin-left: 15px;
     font-weight: 500;
-
-
 }
 .day__img{
     flex-basis: auto;
     margin: auto;
 }
 
+.day__wrapper--degree{
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  flex-grow: 2;
+}
