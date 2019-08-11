@@ -155,7 +155,7 @@ const widget = {
                 });
                 day.day.innerText = data[i].name;
                 day.degree.innerText = String(data[i].degree) + "°";
-                day.degreeN.innerText = String(data[i].degree - 7) + "°";
+                day.degreeN.innerText = String(Math.floor(data[i].degree * 9 / 5 + 32)) + "°F";
                 day.pollen.innerText = data[i].pollen;
 
 
